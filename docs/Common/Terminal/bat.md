@@ -2,10 +2,12 @@
 
 ## Installation
 
-```bash
-brew install bat
-```
+=== "macOS"
+
+    ```bash
+    brew install bat
+    ```
 
 ## Referenses
 
-- [sharkdp/bat](https://github.com/sharkdp/bat)
+-   [sharkdp/bat](https://github.com/sharkdp/bat)

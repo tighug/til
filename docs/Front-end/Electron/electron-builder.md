@@ -4,9 +4,11 @@ electron-builder とは、配布用の Electron アプリをパッケージ化�
 
 ## Installation
 
-```bash
-yarn add -D electron-builder
-```
+=== "Yarn"
+
+    ```bash
+    yarn add -D electron-builder
+    ```
 
 ## CLI
 
@@ -19,8 +21,7 @@ electron-builder install-app-deps # Install appdeps
 
 `insatll-app-deps`は、インストールされている ELectron のバージョンに従って、依存する Native モジュールをインストールする。`package.json`の`scripts`に以下を足せば事足りる。
 
-```json
-// package.json
+```json title="package.json"
 "scripts": {
   // yarn install実行後に自動で呼ばれる
   "postinstall": "electron-builder install-app-deps"
@@ -35,20 +36,20 @@ Ref : [electron-builder Common Configuration](https://www.electron.build/configu
 
 ### mac
 
-- `category` : Macアプリのカテゴリ（[参照](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW8)）
-- `target` : パッケージタイプ（dmg, mas, pkg...）
-- `identity` : 署名時に利用する証明書名
-- `icon` : アイコン`icon.icns`へのパス
-- `darkModeSupport` : ダークモードがサポートされているか
+-   `category` : Mac アプリのカテゴリ（[参照](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW8)）
+-   `target` : パッケージタイプ（dmg, mas, pkg...）
+-   `identity` : 署名時に利用する証明書名
+-   `icon` : アイコン`icon.icns`へのパス
+-   `darkModeSupport` : ダークモードがサポートされているか
 
 #### dmg
 
-- `contents` :
+-   `contents` :
 
 ### win
 
-- `target` : パッケージタイプ（msi, nsis...）
-- `icon` : アイコン`icon.ico`へのパス
+-   `target` : パッケージタイプ（msi, nsis...）
+-   `icon` : アイコン`icon.ico`へのパス
 
 ## Example
 
@@ -56,9 +57,9 @@ Ref : [electron-builder Common Configuration](https://www.electron.build/configu
 productName: "ElectronApp"
 appId: "com.example.app"
 files:
-  - "build/"
+    - "build/"
 directories:
-  output: "release"
+    output: "release"
 win:
 mac:
 dmg:
@@ -71,4 +72,4 @@ linux:
 
 ## References
 
-- [electron-builder](https://www.electron.build/)
+-   [electron-builder](https://www.electron.build/)

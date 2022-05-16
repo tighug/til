@@ -4,37 +4,38 @@ Prettier はコードフォーマッターのひとつです。
 
 以下のプログラミング言語に対応しています。
 
-- JavaScript
-- JSX
-- Angular
-- Vue
-- Flow
-- TypeScript
-- CSS/Less/SCSS
-- HTML
-- JSON
-- GraphQL
-- Markdown（GFM と MDX を含む）
-- YAML
+-   JavaScript
+-   JSX
+-   Angular
+-   Vue
+-   Flow
+-   TypeScript
+-   CSS/Less/SCSS
+-   HTML
+-   JSON
+-   GraphQL
+-   Markdown（GFM と MDX を含む）
+-   YAML
 
 ## Installation
 
-```bash
-yarn add -D prettier
-```
+=== "Yarn"
+
+    ```bash
+    yarn add -D prettier
+    ```
 
 ## Usage
 
-```bash
-yarn prettier --write .
-```
+=== "Yarn"
+
+    ```bash
+    yarn prettier --write .
+    ```
 
 ## Configuration
 
-`.prettierrc.yml`に記述します。
-
-```yaml
-# .prettierrc.yml（値はデフォルト）
+```yaml title=".prettierrc.yml"
 printWidth: 80 # 一行の長さ
 tabWidth: 2 # タブ幅
 useTabs: false # インデントにスペースの代わりにタブを使う
@@ -60,4 +61,4 @@ Prettier によるフォーマットを無視したいファイルは、`.pretti
 
 ## References
 
-- [Prettier](https://prettier.io/docs/en/index.html)
+-   [Prettier](https://prettier.io/docs/en/index.html)

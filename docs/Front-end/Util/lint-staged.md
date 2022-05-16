@@ -8,23 +8,22 @@ yarn add -D lint-staged
 
 ## Configuration
 
-`package.json`あるいは`lintstagedrc`ファイルに記述します。
+`package.json`あるいは`.lintstagedrc`ファイルに記述します。
 
-```json
-// package.json
+```json title="package.json"
 {
-  "lint-staged": {
-    "*": "your-cmd"
-  }
+    "lint-staged": {
+        "*": "your-cmd"
+    }
 }
 ```
 
-```json
+```json title=".lintstagedrc"
 {
-  "*": "your-cmd"
+    "*": "your-cmd"
 }
 ```
 
 ## References
 
-- [okonet/lint-staged](https://github.com/okonet/lint-staged)
+-   [okonet/lint-staged](https://github.com/okonet/lint-staged)

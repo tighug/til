@@ -4,9 +4,11 @@ Yarn は**Node.js のパッケージマネージャー**です。
 
 ## Installation
 
-```bash
-brew install yarn
-```
+=== "macOS"
+
+    ```bash
+    brew install yarn
+    ```
 
 ## CLI
 
@@ -40,4 +42,4 @@ brew install yarn
 
 ## References
 
-- [yarn](https://classic.yarnpkg.com/en/)
+-   [yarn](https://classic.yarnpkg.com/en/)

@@ -2,11 +2,13 @@
 
 ## Installation
 
-```bash
-yarn add -D @testing-library/react # For React
-yarn add -D @testing-library/jest-dom # For Jest
-yarn add -D eslint-plugin-jest-dom # For Jest with ESLint
-```
+=== "Yarn"
+
+    ```bash
+    yarn add -D @testing-library/react # For React
+    yarn add -D @testing-library/jest-dom # For Jest
+    yarn add -D eslint-plugin-jest-dom # For Jest with ESLint
+    ```
 
 ## API
 
@@ -14,9 +16,9 @@ yarn add -D eslint-plugin-jest-dom # For Jest with ESLint
 import { render, screen } from "@testing-library/react";
 
 test("should show login form", () => {
-  render(<Login />);
-  const input = screen.getByLabelText("Username");
-  // Events and assertions...
+    render(<Login />);
+    const input = screen.getByLabelText("Username");
+    // Events and assertions...
 });
 ```
 
@@ -33,15 +35,15 @@ The former ones
 
 The latter ones
 
-- `...LabelText`
-- `...PlaceholderText`
-- `...Text`
-- `...DisplayValue`
-- `...AltText`
-- `...Title`
-- `...Role`
-- `...TestId`
+-   `...LabelText`
+-   `...PlaceholderText`
+-   `...Text`
+-   `...DisplayValue`
+-   `...AltText`
+-   `...Title`
+-   `...Role`
+-   `...TestId`
 
 ## References
 
-- [Testing Library](https://testing-library.com/docs/)
+-   [Testing Library](https://testing-library.com/docs/)

@@ -4,9 +4,11 @@ Electron は、**クロスプラットフォームのデスクトップアプリ
 
 ## Installation
 
-```bash
-yarn add -D electron
-```
+=== "Yarn"
+
+    ```bash
+    yarn add -D electron
+    ```
 
 ## CLI
 
@@ -18,5 +20,5 @@ electron [main file]  # Run Electron App
 
 ## References
 
-- [Electron Documentation](https://www.electronjs.org/docs)
-- [Electron API Demos](https://github.com/electron/electron-api-demos)
+-   [Electron Documentation](https://www.electronjs.org/docs)
+-   [Electron API Demos](https://github.com/electron/electron-api-demos)

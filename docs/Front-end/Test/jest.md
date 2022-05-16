@@ -4,10 +4,12 @@ Jest は JavaScript のテスティングフレームワークです。
 
 ## Installation
 
-```bash
-yarn add -D jest
-yarn add -D ts-jest @types/jest # For TypeScript
-```
+=== "Yarn"
+
+    ```bash
+    yarn add -D jest
+    yarn add -D ts-jest @types/jest # For TypeScript
+    ```
 
 ## CLI
 
@@ -108,4 +110,4 @@ module.exports = (request, options) => {
 
 ## References
 
-- [Jest](https://jestjs.io/ja/)
+-   [Jest](https://jestjs.io/ja/)

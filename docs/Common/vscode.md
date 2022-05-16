@@ -2,8 +2,8 @@
 
 VSCode とは、**Microssoft が開発したオープンソースのテキストエディタ**です。拡張機能が便利で、統合ターミナルが使えます。必要な言語だけ拡張機能で追加できるので、UI や機能も最低限で済みます。
 
-- [Visual Studio Code のインストールと使い方](https://eng-entrance.com/texteditor-vscode)
-- [VSCode + WSL](https://qiita.com/remin/items/b764036e95a13075ee98)
+-   [Visual Studio Code のインストールと使い方](https://eng-entrance.com/texteditor-vscode)
+-   [VSCode + WSL](https://qiita.com/remin/items/b764036e95a13075ee98)
 
 ## Installation
 
@@ -11,8 +11,8 @@ VSCode とは、**Microssoft が開発したオープンソースのテキスト
 
 ## Shortcuts
 
-- [Windows 版](https://qiita.com/TakahiRoyte/items/cdab6fca64da386a690b)
-- [Mac 版](https://qiita.com/naru0504/items/99495c4482cd158ddca8)
+-   [Windows 版](https://qiita.com/TakahiRoyte/items/cdab6fca64da386a690b)
+-   [Mac 版](https://qiita.com/naru0504/items/99495c4482cd158ddca8)
 
 ## Extensions
 
@@ -77,22 +77,22 @@ VSCode とは、**Microssoft が開発したオープンソースのテキスト
 
 ### Theme
 
-- Atom One Dark Theme
-- Dracura Official
-- One Dark Pro
-- Panda Theme
-- Sublime Material Theme
-- SynthWave '84
-- Material Icon Theme
+-   Atom One Dark Theme
+-   Dracura Official
+-   One Dark Pro
+-   Panda Theme
+-   Sublime Material Theme
+-   SynthWave '84
+-   Material Icon Theme
 
 ## Tips
 
 ### ターミナルを WSL に変更する
 
-setting.json
-
-```JSON
-"terminal.integrated.shell.windows": "C:/Windows/System32/wsl.exe"
+```JSON title="settings.json"
+{
+    "terminal.integrated.shell.windows": "C:/Windows/System32/wsl.exe"
+}
 ```
 
 ### WSL で Git を使う
@@ -100,7 +100,8 @@ setting.json
 1. [WSLGit](https://github.com/andy-5/wslgit)のバイナリ`wslgit.exe`をダウンロードし、適当なディレクトリに移動。
 2. パスを設定
 
-   ```JSON
-   // setting.json
-   "git.path": "C:/bin/wslgit.exe"
-   ```
+```JSON title="settings.json"
+{
+    "git.path": "C:/bin/wslgit.exe"
+}
+```

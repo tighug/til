@@ -2,9 +2,11 @@
 
 ## Installation
 
-```bash
-yarn add -D @testing-library/jest-dom
-```
+=== "Yarn"
+
+    ```bash
+    yarn add -D @testing-library/jest-dom
+    ```
 
 ## Setup
 
@@ -57,8 +59,8 @@ setupFilesAfterEnv: ["<rootDir>/jest-setup.js"];
 | `toHaveDescription()`               |                            |
 | `toHaveErrorMessage()`              |                            |
 
-- `button`/`input`/`select`/`textarea`/`optgroup`/`option`/`fieldset`
+-   `button`/`input`/`select`/`textarea`/`optgroup`/`option`/`fieldset`
 
 ## References
 
-- [testing-library/jest-dom | GitHub](https://github.com/testing-library/jest-dom)
+-   [testing-library/jest-dom | GitHub](https://github.com/testing-library/jest-dom)

@@ -2,23 +2,23 @@
 
 MySQL とは、**データベース管理システム（DBMS）のひとつ**です。
 
-- [MySQL の使い方を基礎からマスター](https://26gram.com/mysql)
+-   [MySQL の使い方を基礎からマスター](https://26gram.com/mysql)
 
 ## Installation
 
-### Linux
+=== "Linux"
 
-```bash
-sudo apt update
-sudo apt install mysql-server
-```
+    ```bash
+    sudo apt update
+    sudo apt install mysql-server
+    ```
 
-### Mac
+=== "Mac"
 
-```bash
-brew update
-brew install mysql
-```
+    ```bash
+    brew update
+    brew install mysql
+    ```
 
 ## Usage
 
@@ -48,121 +48,121 @@ exit
 
 ### ユーザーの管理
 
-- **作成**
+-   **作成**
 
-  ```sql
-  CREATE USER ['user']@['host'] IDENTIFIED BY ['password'];
-  ```
+    ```sql
+    CREATE USER ['user']@['host'] IDENTIFIED BY ['password'];
+    ```
 
-- **確認**
+-   **確認**
 
-  ```sql
-  SELECT USER, HOST FROM mysql.user;
-  ```
+    ```sql
+    SELECT USER, HOST FROM mysql.user;
+    ```
 
-- **権限付与**
+-   **権限付与**
 
-  ```sql
-  GRANT ALL PRIVILEGES ON *.* TO ['user']@['host'];
-  ```
+    ```sql
+    GRANT ALL PRIVILEGES ON *.* TO ['user']@['host'];
+    ```
 
-- **権限確認**
+-   **権限確認**
 
-  ```sql
-  SHOW GRANTS FOR [user]@[host];
-  ```
+    ```sql
+    SHOW GRANTS FOR [user]@[host];
+    ```
 
 ### データベースの管理
 
-- **作成**
+-   **作成**
 
-  ```sql
-  CREATE DATABASE [name];
-  ```
+    ```sql
+    CREATE DATABASE [name];
+    ```
 
-- **一覧**
+-   **一覧**
 
-  ```sql
-  SHOW DATABASES;
-  ```
+    ```sql
+    SHOW DATABASES;
+    ```
 
-- **指定**
+-   **指定**
 
-  ```sql
-  USE [db name];
-  ```
+    ```sql
+    USE [db name];
+    ```
 
-- **削除**
+-   **削除**
 
-  ```sql
-  DROP DATABASE [name];
-  ```
+    ```sql
+    DROP DATABASE [name];
+    ```
 
 ### テーブルの管理
 
-- **作成**
+-   **作成**
 
-  ```sql
-  CREATE TABLE [name] (
-      [field name] [data type] [option]
-  );
-  ```
+    ```sql
+    CREATE TABLE [name] (
+        [field name] [data type] [option]
+    );
+    ```
 
-  - `PRIMARY KEY`：主キー
-  - `UNIQUE`：重複を許容しない
-  - `NOT NULL`：NULL を許容しない
-  - `DEFAULT [value]`：デフォルト値
+    -   `PRIMARY KEY`：主キー
+    -   `UNIQUE`：重複を許容しない
+    -   `NOT NULL`：NULL を許容しない
+    -   `DEFAULT [value]`：デフォルト値
 
-- **確認**
+-   **確認**
 
-  ```sql
-  SHOW TABLES;
-  ```
+    ```sql
+    SHOW TABLES;
+    ```
 
-- **構造確認**
+-   **構造確認**
 
-  ```sql
-  DESC [name];
-  ```
+    ```sql
+    DESC [name];
+    ```
 
-- **削除**
+-   **削除**
 
-  ```sql
-  DROP TABLE [name];
-  ```
+    ```sql
+    DROP TABLE [name];
+    ```
 
 ### レコードの管理
 
-- **追加**
+-   **追加**
 
-  ```sql
-  INSERT INTO [table name] [field name] VALUES [value];
-  ```
+    ```sql
+    INSERT INTO [table name] [field name] VALUES [value];
+    ```
 
-- **取得**
+-   **取得**
 
-  ```sql
-  SELECT [field name] FROM [table name];
-  ```
+    ```sql
+    SELECT [field name] FROM [table name];
+    ```
 
-- **列追加**
+-   **列追加**
 
-  ```sql
-  ALTER TABLE [table name] ADD COLUMN [field name] [data type]
-  ```
+    ```sql
+    ALTER TABLE [table name] ADD COLUMN [field name] [data type]
+    ```
 
-- **更新**
+-   **更新**
 
-  ```sql
-  UPDATE [table name] SET [field name]=[value] WHERE [conditional];
-  ```
+    ```sql
+    UPDATE [table name] SET [field name]=[value] WHERE [conditional];
+    ```
 
-- **削除**
+-   **削除**
 
-  ```sql
-  DELETE FROM [table name];                     # 全削除
-  DELETE FROM [table name] WHERE [conditional]; # 一部削除
-  ```
+    ```sql
+    DELETE FROM [table name];                     # 全削除
+    DELETE FROM [table name] WHERE [conditional]; # 一部削除
+    ```
 
 #### クエリ
 
@@ -232,8 +232,8 @@ FROM movies;
 | `INT(m)`       | 整数（4byte） | -2147483648 ～ 2147483647                   |
 | `BIGINT(m)`    | 整数（8byte） | -9223372036854775808 ～ 9223372036854775807 |
 
-- `UNSIGNED`：正の数に限定する
-- `ZEROFILL`:入力した数字に対して最大桁数までゼロで埋める
+-   `UNSIGNED`：正の数に限定する
+-   `ZEROFILL`:入力した数字に対して最大桁数までゼロで埋める
 
 ### 小数
 
@@ -244,8 +244,8 @@ FROM movies;
 | `FLOAT(m,d)`  | 単精度浮動小数点型 | m：1 ～ 255 桁 n：0 ～ 30 桁まで指定可能            |
 | `DOUBLE(m,d)` | 倍精度浮動小数点型 | m：1 ～ 255 桁 n：0 ～ 30 桁まで指定可能            |
 
-- `UNSIGNED`：正の数に限定する
-- `ZEROFILL`:入力した数字に対して最大桁数までゼロで埋める
+-   `UNSIGNED`：正の数に限定する
+-   `ZEROFILL`:入力した数字に対して最大桁数までゼロで埋める
 
 ### 文字列
 

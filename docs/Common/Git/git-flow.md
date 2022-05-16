@@ -4,13 +4,13 @@
 
 ## Installation
 
-```bash
-brew install git-flow
-```
+=== "macOS"
+
+    ```bash
+    brew install git-flow
+    ```
 
 ## Branches
-
-![git-flow](images/git-flow_2020-08-04-05-23.png)
 
 ### master
 
@@ -96,6 +96,6 @@ git glow hotfix finish [name]
 
 ## References
 
-- [Git-flow って何？](https://qiita.com/KosukeSone/items/514dd24828b485c69a05)
-- [Git-flow ～ Git のブランチモデルを知る～](https://tracpath.com/bootcamp/learning_git_git_flow.html)
-- [nvie/gitflow | GitHub](https://github.com/nvie/gitflow)
+-   [Git-flow って何？](https://qiita.com/KosukeSone/items/514dd24828b485c69a05)
+-   [Git-flow ～ Git のブランチモデルを知る～](https://tracpath.com/bootcamp/learning_git_git_flow.html)
+-   [nvie/gitflow | GitHub](https://github.com/nvie/gitflow)

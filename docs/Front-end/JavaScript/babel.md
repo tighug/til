@@ -35,20 +35,20 @@ yarn add -D @babel/preset-typescript  # TypeScript用プリセット
 
 ```json
 {
-  "presets": [
-    [
-      "@babel/env",
-      {
-        // 必要なcore-jsを自動でimportする
-        "useBuiltIns": "usage"
-      }
-    ],
-    "@babel/preset-react",
-    "@babel/preset-typescript"
-  ]
+    "presets": [
+        [
+            "@babel/env",
+            {
+                // 必要なcore-jsを自動でimportする
+                "useBuiltIns": "usage"
+            }
+        ],
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+    ]
 }
 ```
 
 ## References
 
-- [Babel](https://babeljs.io/)
+-   [Babel](https://babeljs.io/)

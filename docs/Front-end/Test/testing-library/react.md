@@ -2,9 +2,11 @@
 
 ## Installation
 
-```bash
-yarn add -D @testing-library/react
-```
+=== "Yarn"
+
+    ```bash
+    yarn add -D @testing-library/react
+    ```
 
 ## API
 
@@ -14,13 +16,13 @@ yarn add -D @testing-library/react
 function render(ui: React.ReactElement<any>, options?: {}): RenderResult;
 ```
 
-- options
-  - `container`
-  - `baseElement`
-  - `hydrate`
-  - `wrapper`
-  - `queries`
-- result
+-   options
+    -   `container`
+    -   `baseElement`
+    -   `hydrate`
+    -   `wrapper`
+    -   `queries`
+-   result
 
 #### `cleanup`
 
@@ -32,5 +34,5 @@ function render(ui: React.ReactElement<any>, options?: {}): RenderResult;
 
 ## References
 
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- [testing-library/react-testing-library | GitHub](https://github.com/testing-library/react-testing-library)
+-   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+-   [testing-library/react-testing-library | GitHub](https://github.com/testing-library/react-testing-library)

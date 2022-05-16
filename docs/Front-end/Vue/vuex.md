@@ -2,13 +2,15 @@
 
 Vuex とは、**Vue.js アプリケーションのための状態管理パターン+ライブラリ**です。
 
-- [Vuex 入門](https://vuex.vuejs.org/ja/guide/)
+-   [Vuex 入門](https://vuex.vuejs.org/ja/guide/)
 
 ## Installation
 
-```bash
-yarn add vuex
-```
+=== "Yarn"
+
+    ```bash
+    yarn add vuex
+    ```
 
 ## Concept
 

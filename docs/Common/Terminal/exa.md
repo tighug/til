@@ -2,10 +2,12 @@
 
 ## Installation
 
-```bash
-brew install exa
-```
+=== "macOS"
+
+    ```bash
+    brew install exa
+    ```
 
 ## References
 
-- [exa](https://the.exa.website/)
+-   [exa](https://the.exa.website/)

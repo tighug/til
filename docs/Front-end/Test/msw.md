@@ -2,10 +2,12 @@
 
 ## Installation
 
-```bash
-yarn add -D msw
-```
+=== "Yarn"
+
+    ```bash
+    yarn add -D msw
+    ```
 
 ## Reference
 
-- [Mock Service Worker](https://mswjs.io/)
+-   [Mock Service Worker](https://mswjs.io/)

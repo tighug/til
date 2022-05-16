@@ -6,8 +6,8 @@ theme:
   name: material
   palette:
     scheme: slate
-    primary: teal
-    accent: cyan
+    primary: indigo
+    accent: deep orange
   features:
     - navigation.tabs
     - navigation.instant
@@ -15,11 +15,17 @@ theme:
 extra:
   search:
     language: ja
+extra_css:
+  - stylesheets/extra.css
 markdown_extensions:
   - admonition
+  - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight
-  - pymdownx.tabbed
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
 nav:
   - Home: index.md
   - App Dev:
@@ -53,24 +59,24 @@ nav:
       - Python:
           - Flask: Back-end/Python/flask.md
   - Blockchain:
-      - Blockchain: Blockchain/README.md
+      - Blockchain: Blockchain/index.md
       - IWA: Blockchain/IWA.md
       - Oracle: Blockchain/Oracle.md
       - TTF: Blockchain/TTF.md
       - Truffle: Blockchain/Truffle.md
       - web3.js: Blockchain/web3js.md
-      - open-zeppelin:
-          - OpenZeppelin: Blockchain/open-zeppelin/OpenZeppelin.md
-          - ERC 20: Blockchain/open-zeppelin/OpenZeppelin_ERC20.md
-          - ERC 721: Blockchain/open-zeppelin/OpenZeppelin_ERC721.md
-          - ERC 777: Blockchain/open-zeppelin/OpenZeppelin_ERC777.md
-          - Ownable: Blockchain/open-zeppelin/OpenZeppelin_Ownership.md
-      - solidity:
-          - Solidity: Blockchain/solidity/Solidity.md
-          - Solidity Common Patterns: Blockchain/solidity/Solidity_CommonPatterns.md
-          - Solidity Security: Blockchain/solidity/Solidity_Security.md
-          - Solidity Usage: Blockchain/solidity/Solidity_Usage.md
-          - stringutils: Blockchain/solidity/Solidity_stringutils.md
+      - Open Zeppelin:
+          - OpenZeppelin: Blockchain/Open Zeppelin/index.md
+          - ERC 20: Blockchain/Open Zeppelin/ERC20.md
+          - ERC 721: Blockchain/Open Zeppelin/ERC721.md
+          - ERC 777: Blockchain/Open Zeppelin/ERC777.md
+          - Ownable: Blockchain/Open Zeppelin/Ownership.md
+      - Solidity:
+          - Solidity: Blockchain/Solidity/index.md
+          - Solidity Common Patterns: Blockchain/Solidity/CommonPatterns.md
+          - Solidity Security: Blockchain/Solidity/Security.md
+          - Solidity Usage: Blockchain/Solidity/Usage.md
+          - stringutils: Blockchain/Solidity/stringutils.md
   - Book:
       - ゼロから作る Deep Learning 1: Book/ゼロから作るDeepLearning1.md
       - ゼロから作る Deep Learning 2: Book/ゼロから作るDeepLearning2.md
@@ -88,12 +94,13 @@ nav:
           - 9. システム開発技術: Book/基本情報技術者教室/9-システム開発技術.md
   - Common:
       - Common: Common/index.md
+      - Linux: Common/linux.md
       - Make: Common/make.md
       - VSCode: Common/vscode.md
       - Git:
+          - Git: Common/Git/index.md
           - Git Commit Guidline: Common/Git/git-commit-guidline.md
           - git-flow: Common/Git/git-flow.md
-          - Git: Common/Git/git.md
           - GitHub Actions: Common/Git/github-actions.md
           - GitHub: Common/Git/github.md
       - Office:
@@ -102,73 +109,71 @@ nav:
           - bat: Common/Terminal/bat.md
           - exa: Common/Terminal/exa.md
           - fish: Common/Terminal/fish.md
-          - Linux: Common/Terminal/linux.md
           - Starship: Common/Terminal/starship.md
   - Front-end:
       - Atomic Design: Front-end/atomic-design.md
-      - css:
-          - CSS: Front-end/css/index.md
-          - CSS: Front-end/css/css.md
-          - CSS Flexbox: Front-end/css/flex-box.md
-          - Learning Resources: Front-end/css/learning-resources.md
-          - CSS Property Order: Front-end/css/property-order.md
-          - stylelint: Front-end/css/stylelint.md
-      - electron:
-          - Electron: Front-end/electron/index.md
-          - electron-builder: Front-end/electron/electron-builder.md
-          - electron-webpack: Front-end/electron/electron-webpack.md
-      - html:
-          - HTML: Front-end/html/index.md
-          - Learning Resources: Front-end/html/learning-resources.md
-          - Semantic HTML: Front-end/html/semantic-html.md
-      - javascript:
-          - JavaScript: Front-end/javascript/index.md
-          - Babel: Front-end/javascript/babel.md
-          - ESLint: Front-end/javascript/eslint.md
-          - Node.js: Front-end/javascript/nodejs.md
-          - npm: Front-end/javascript/npm.md
-          - Prettier: Front-end/javascript/prettier.md
-          - Yarn: Front-end/javascript/yarn.md
-          - typescript:
-              - TypeScript: Front-end/javascript/typescript/index.md
-              - ts-node: Front-end/javascript/typescript/ts-node.md
-          - webpack:
-              - Webpack Dev Server: Front-end/javascript/webpack/WebpackDevServer.md
-              - webpack: Front-end/javascript/webpack/webpack.md
-      - react:
-          - React: Front-end/react/index.md
-          - React Context: Front-end/react/react-context.md
-          - React Hooks: Front-end/react/react-hooks.md
-          - React Hot Loader: Front-end/react/react-hot-loader.md
-          - React Redux: Front-end/react/react-redux.md
-          - React Router: Front-end/react/react-router.md
-          - Redux Toolkit: Front-end/react/redux-toolkit.md
-          - Redux: Front-end/react/redux.md
-          - Styled Components: Front-end/react/styled-components.md
-          - Styled System: Front-end/react/styled-system.md
-      - test:
-          - テスト: Front-end/test/index.md
-          - Cypress: Front-end/test/cypress.md
-          - Jest Styled Components: Front-end/test/jest-styled-components.md
-          - Jest: Front-end/test/jest.md
-          - Mock Service Worker: Front-end/test/msw.md
-          - ts-jest: Front-end/test/ts-jest.md
+      - CSS:
+          - CSS: Front-end/CSS/index.md
+          - CSS Flexbox: Front-end/CSS/flex-box.md
+          - Learning Resources: Front-end/CSS/learning-resources.md
+          - CSS Property Order: Front-end/CSS/property-order.md
+          - stylelint: Front-end/CSS/stylelint.md
+      - Electron:
+          - Electron: Front-end/Electron/index.md
+          - electron-builder: Front-end/Electron/electron-builder.md
+          - electron-webpack: Front-end/Electron/electron-webpack.md
+      - HTML:
+          - HTML: Front-end/HTML/index.md
+          - Learning Resources: Front-end/HTML/learning-resources.md
+          - Semantic HTML: Front-end/HTML/semantic-html.md
+      - JavaScript:
+          - JavaScript: Front-end/JavaScript/index.md
+          - Babel: Front-end/JavaScript/babel.md
+          - ESLint: Front-end/JavaScript/eslint.md
+          - Node.js: Front-end/JavaScript/nodejs.md
+          - npm: Front-end/JavaScript/npm.md
+          - Prettier: Front-end/JavaScript/prettier.md
+          - Yarn: Front-end/JavaScript/yarn.md
+          - TypeScript:
+              - TypeScript: Front-end/JavaScript/TypeScript/index.md
+              - ts-node: Front-end/JavaScript/TypeScript/ts-node.md
+          - Webpack:
+              - Webpack Dev Server: Front-end/JavaScript/Webpack/WebpackDevServer.md
+              - webpack: Front-end/JavaScript/Webpack/webpack.md
+      - React:
+          - React: Front-end/React/index.md
+          - React Context: Front-end/React/react-context.md
+          - React Hooks: Front-end/React/react-hooks.md
+          - React Hot Loader: Front-end/React/react-hot-loader.md
+          - React Redux: Front-end/React/react-redux.md
+          - React Router: Front-end/React/react-router.md
+          - Redux Toolkit: Front-end/React/redux-toolkit.md
+          - Redux: Front-end/React/redux.md
+          - Styled Components: Front-end/React/styled-components.md
+          - Styled System: Front-end/React/styled-system.md
+      - Test:
+          - テスト: Front-end/Test/index.md
+          - Cypress: Front-end/Test/cypress.md
+          - Jest Styled Components: Front-end/Test/jest-styled-components.md
+          - Jest: Front-end/Test/jest.md
+          - Mock Service Worker: Front-end/Test/msw.md
+          - ts-jest: Front-end/Test/ts-jest.md
           - testing-library:
-              - Testing Library: Front-end/test/testing-library/index.md
-              - jest-dom: Front-end/test/testing-library/jest-dom.md
-              - React Testing Library: Front-end/test/testing-library/react.md
-              - user-event: Front-end/test/testing-library/user-event.md
-      - util:
-          - Chromatic: Front-end/util/chromatic.md
-          - Husky: Front-end/util/husky.md
-          - lint-staged: Front-end/util/lint-staged.md
-          - semantic-release: Front-end/util/semantic-release.md
-          - Storybook Deployer: Front-end/util/storybook-deployer.md
-          - Storybook: Front-end/util/storybook.md
-      - vue:
-          - Nuxt.js: Front-end/vue/nuxt.md
-          - Vue.js: Front-end/vue/vue.md
-          - Vuex: Front-end/vue/vuex.md
+              - Testing Library: Front-end/Test/testing-library/index.md
+              - jest-dom: Front-end/Test/testing-library/jest-dom.md
+              - React Testing Library: Front-end/Test/testing-library/react.md
+              - user-event: Front-end/Test/testing-library/user-event.md
+      - Util:
+          - Chromatic: Front-end/Util/chromatic.md
+          - Husky: Front-end/Util/husky.md
+          - lint-staged: Front-end/Util/lint-staged.md
+          - semantic-release: Front-end/Util/semantic-release.md
+          - Storybook Deployer: Front-end/Util/storybook-deployer.md
+          - Storybook: Front-end/Util/storybook.md
+      - Vue:
+          - Nuxt.js: Front-end/Vue/nuxt.md
+          - Vue.js: Front-end/Vue/vue.md
+          - Vuex: Front-end/Vue/vuex.md
   - Machine Learning:
       - Machine Learning: Machine Learning/index.md
       - CNN: Machine Learning/cnn.md

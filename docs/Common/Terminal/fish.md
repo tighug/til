@@ -4,16 +4,16 @@ fish はコマンドラインシェルの 1 つです。入力補完の提案が
 
 ## Installation
 
-### Mac
+=== "macOS"
 
-```bash
-brew install fish
-```
+    ```bash
+    brew install fish
+    ```
 
-### Linux
+=== "Linux"
 
-```bash
-sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt-get update
-sudo apt-get install fish
-```
+    ```bash
+    sudo apt-add-repository ppa:fish-shell/release-3
+    sudo apt-get update
+    sudo apt-get install fish
+    ```
