@@ -7,12 +7,11 @@ def get_files() -> list[str]:
 
     for source_dir, dirnames, filenames in os.walk("./docs", followlinks=True):
         relative_dir = os.path.relpath(source_dir, "./docs")
-
-        for dirname in list(dirnames):
-            path = os.path.normpath(os.path.join(relative_dir, dirname))
         dirnames.sort()
 
         for filename in sort_files(filenames):
+            if filename == "extra.css":
+                continue
             path = os.path.normpath(os.path.join(relative_dir, filename))
             # Skip README.md if an index file also exists in dir
             if filename.lower() == "readme.md" and "index.md" in filenames:
@@ -48,7 +47,6 @@ def main():
     prev_dir: str = ""
 
     for file in files:
-        print(file)
         dir_name = ""
         slash_count = file.count("/")
         if slash_count == 1:
