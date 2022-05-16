@@ -28,11 +28,6 @@ markdown_extensions:
   - tables
 nav:
   - Home: index.md
-  - App Dev:
-      - Idea: App Dev/idea.md
-      - Meleon UI: App Dev/meleon-ui.md
-      - Meleon: App Dev/meleon.md
-      - Personal AI: App Dev/personal-ai.md
   - Back-end:
       - Restful API: Back-end/restful-api.md
       - DB:
@@ -56,6 +51,36 @@ nav:
               - Go os: Back-end/Go/standard/os.md
       - Java:
           - Java: Back-end/Java/index.md
+      - Nodejs:
+          - Node.js: Back-end/Nodejs/index.md
+          - Configuration:
+              - dotenv: Back-end/Nodejs/Configuration/dotenv.md
+          - DB:
+              - better-sqlite3: Back-end/Nodejs/DB/better-sqlite3.md
+              - db-migrate: Back-end/Nodejs/DB/db-migrate.md
+              - mysql2: Back-end/Nodejs/DB/mysql2.md
+              - Prisma: Back-end/Nodejs/DB/prisma.md
+              - Sequelize: Back-end/Nodejs/DB/sequelize.md
+              - TypeORM: Back-end/Nodejs/DB/typeorm.md
+          - Error:
+              - http-errors: Back-end/Nodejs/Error/http-errors.md
+          - Linting&Formatting:
+              - ESLint: Back-end/Nodejs/Linting&Formatting/eslint.md
+              - Husky: Back-end/Nodejs/Linting&Formatting/husky.md
+              - lint-staged: Back-end/Nodejs/Linting&Formatting/lint-staged.md
+              - Prettier: Back-end/Nodejs/Linting&Formatting/prettier.md
+              - textlint: Back-end/Nodejs/Linting&Formatting/textlint.md
+          - Standard Library:
+              - fs: Back-end/Nodejs/Standard Library/fs.md
+              - path: Back-end/Nodejs/Standard Library/path.md
+          - TypeScript:
+              - TypeScript: Back-end/Nodejs/TypeScript/index.md
+              - Babel: Back-end/Nodejs/TypeScript/babel.md
+              - ts-node-dev: Back-end/Nodejs/TypeScript/ts-node-dev.md
+              - ts-node: Back-end/Nodejs/TypeScript/ts-node.md
+          - Validation:
+              - express-validator: Back-end/Nodejs/Validation/express-validator.md
+              - validator: Back-end/Nodejs/Validation/validator.md
       - Python:
           - Flask: Back-end/Python/flask.md
   - Blockchain:
@@ -65,12 +90,12 @@ nav:
       - TTF: Blockchain/TTF.md
       - Truffle: Blockchain/Truffle.md
       - web3.js: Blockchain/web3js.md
-      - Open Zeppelin:
-          - OpenZeppelin: Blockchain/Open Zeppelin/index.md
-          - ERC 20: Blockchain/Open Zeppelin/ERC20.md
-          - ERC 721: Blockchain/Open Zeppelin/ERC721.md
-          - ERC 777: Blockchain/Open Zeppelin/ERC777.md
-          - Ownable: Blockchain/Open Zeppelin/Ownership.md
+      - OpenZeppelin:
+          - OpenZeppelin: Blockchain/OpenZeppelin/index.md
+          - ERC 20: Blockchain/OpenZeppelin/ERC20.md
+          - ERC 721: Blockchain/OpenZeppelin/ERC721.md
+          - ERC 777: Blockchain/OpenZeppelin/ERC777.md
+          - Ownable: Blockchain/OpenZeppelin/Ownership.md
       - Solidity:
           - Solidity: Blockchain/Solidity/index.md
           - Solidity Common Patterns: Blockchain/Solidity/CommonPatterns.md
@@ -110,6 +135,16 @@ nav:
           - exa: Common/Terminal/exa.md
           - fish: Common/Terminal/fish.md
           - Starship: Common/Terminal/starship.md
+  - DevOps:
+      - DevOps: DevOps/index.md
+      - Make: DevOps/make.md
+      - Nginx: DevOps/nginx.md
+      - docker:
+          - Docker: DevOps/docker/index.md
+          - Compose: DevOps/docker/compose.md
+          - Dockerfile: DevOps/docker/file.md
+          - hadolint: DevOps/docker/hadolint.md
+          - Kubernetes: DevOps/docker/kubernetes.md
   - Front-end:
       - Atomic Design: Front-end/atomic-design.md
       - CSS:
