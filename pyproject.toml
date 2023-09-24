@@ -8,6 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.10"
 mkdocs-material = "^8.2.15"
+mkdocs-git-revision-date-localized-plugin = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"

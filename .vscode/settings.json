@@ -1,12 +1,11 @@
 {
   "editor.formatOnSave": true,
   "python.analysis.typeCheckingMode": "strict",
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
-  "python.formatting.provider": "black",
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
   "files.exclude": {
     "**/__pycache__": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
   }
 }

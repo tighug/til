@@ -7,16 +7,21 @@ theme:
   palette:
     scheme: slate
     primary: indigo
-    accent: deep orange
+    accent: green
   features:
     - navigation.tabs
     - navigation.instant
   language: ja
+  custom_dir: overrides
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: iso_date
 extra:
   search:
     language: ja
 extra_css:
-  - stylesheets/extra.css
+  - extra.css
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -26,210 +31,172 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - tables
+  - footnotes
 nav:
-  - Home: index.md
-  - Back-end:
-      - Restful API: Back-end/restful-api.md
-      - DB:
-          - DB Design: Back-end/DB/DBDesign.md
-          - MySQL: Back-end/DB/mysql.md
-      - Go:
-          - Go: Back-end/Go/index.md
-          - Afero: Back-end/Go/afero.md
-          - Cobra: Back-end/Go/cobra.md
-          - Echo: Back-end/Go/echo.md
-          - Go encoding/csv: Back-end/Go/encoding-csv.md
-          - GoReleaser: Back-end/Go/go-releaser.md
-          - GORM: Back-end/Go/gorm.md
-          - Go Project Layout: Back-end/Go/project-layout.md
-          - Viper: Back-end/Go/viper.md
-          - zerolog: Back-end/Go/zerolog.md
-          - standard:
-              - Go bufio: Back-end/Go/standard/bufio.md
-              - Go io/ioutil: Back-end/Go/standard/io-ioutil.md
-              - Go os/exec: Back-end/Go/standard/os-exec.md
-              - Go os: Back-end/Go/standard/os.md
-      - Java:
-          - Java: Back-end/Java/index.md
-      - Nodejs:
-          - Node.js: Back-end/Nodejs/index.md
-          - Configuration:
-              - dotenv: Back-end/Nodejs/Configuration/dotenv.md
-          - DB:
-              - better-sqlite3: Back-end/Nodejs/DB/better-sqlite3.md
-              - db-migrate: Back-end/Nodejs/DB/db-migrate.md
-              - mysql2: Back-end/Nodejs/DB/mysql2.md
-              - Prisma: Back-end/Nodejs/DB/prisma.md
-              - Sequelize: Back-end/Nodejs/DB/sequelize.md
-              - TypeORM: Back-end/Nodejs/DB/typeorm.md
-          - Error:
-              - http-errors: Back-end/Nodejs/Error/http-errors.md
-          - Linting&Formatting:
-              - ESLint: Back-end/Nodejs/Linting&Formatting/eslint.md
-              - Husky: Back-end/Nodejs/Linting&Formatting/husky.md
-              - lint-staged: Back-end/Nodejs/Linting&Formatting/lint-staged.md
-              - Prettier: Back-end/Nodejs/Linting&Formatting/prettier.md
-              - textlint: Back-end/Nodejs/Linting&Formatting/textlint.md
-          - Standard Library:
-              - fs: Back-end/Nodejs/Standard Library/fs.md
-              - path: Back-end/Nodejs/Standard Library/path.md
-          - TypeScript:
-              - TypeScript: Back-end/Nodejs/TypeScript/index.md
-              - Babel: Back-end/Nodejs/TypeScript/babel.md
-              - ts-node-dev: Back-end/Nodejs/TypeScript/ts-node-dev.md
-              - ts-node: Back-end/Nodejs/TypeScript/ts-node.md
-          - Validation:
-              - express-validator: Back-end/Nodejs/Validation/express-validator.md
-              - validator: Back-end/Nodejs/Validation/validator.md
-      - Python:
-          - Flask: Back-end/Python/flask.md
-  - Blockchain:
-      - Blockchain: Blockchain/index.md
-      - IWA: Blockchain/IWA.md
-      - Oracle: Blockchain/Oracle.md
-      - TTF: Blockchain/TTF.md
-      - Truffle: Blockchain/Truffle.md
-      - web3.js: Blockchain/web3js.md
-      - OpenZeppelin:
-          - OpenZeppelin: Blockchain/OpenZeppelin/index.md
-          - ERC 20: Blockchain/OpenZeppelin/ERC20.md
-          - ERC 721: Blockchain/OpenZeppelin/ERC721.md
-          - ERC 777: Blockchain/OpenZeppelin/ERC777.md
-          - Ownable: Blockchain/OpenZeppelin/Ownership.md
-      - Solidity:
-          - Solidity: Blockchain/Solidity/index.md
-          - Solidity Common Patterns: Blockchain/Solidity/CommonPatterns.md
-          - Solidity Security: Blockchain/Solidity/Security.md
-          - Solidity Usage: Blockchain/Solidity/Usage.md
-          - stringutils: Blockchain/Solidity/stringutils.md
-  - Book:
-      - ゼロから作る Deep Learning 1: Book/ゼロから作るDeepLearning1.md
-      - ゼロから作る Deep Learning 2: Book/ゼロから作るDeepLearning2.md
-      - 基本情報技術者教室:
-          - 1. コンピュータ構成要素: Book/基本情報技術者教室/1-コンピュータ構成要素.md
-          - 10. マネジメント系: Book/基本情報技術者教室/10-マネジメント系.md
-          - 11. ストラテジ系: Book/基本情報技術者教室/11-ストラテジ系.md
-          - 2. ソフトウェアとマルチメディア: Book/基本情報技術者教室/2-ソフトウェアとマルチメディア.md
-          - 3. 基礎理論: Book/基本情報技術者教室/3-基礎理論.md
-          - 4. アルゴリズムとプログラミング: Book/基本情報技術者教室/4-アルゴリズムとプログラミング.md
-          - 5. システム構成要素: Book/基本情報技術者教室/5-システム構成要素.md
-          - 6. データベース技術: Book/基本情報技術者教室/6-データベース技術.md
-          - 7. ネットワーク技術: Book/基本情報技術者教室/7-ネットワーク技術.md
-          - 8. 情報セキュリティ: Book/基本情報技術者教室/8-情報セキュリティ.md
-          - 9. システム開発技術: Book/基本情報技術者教室/9-システム開発技術.md
-  - Common:
-      - Common: Common/index.md
-      - Linux: Common/linux.md
-      - Make: Common/make.md
-      - VSCode: Common/vscode.md
-      - Git:
-          - Git: Common/Git/index.md
-          - Git Commit Guidline: Common/Git/git-commit-guidline.md
-          - git-flow: Common/Git/git-flow.md
-          - GitHub Actions: Common/Git/github-actions.md
-          - GitHub: Common/Git/github.md
-      - Office:
-          - Excel: Common/Office/excel.md
+  - README: index.md
+  - Basic:
+      - Common: Basic/index.md
+      - Linux Directory: Basic/linux-directory.md
+      - Unix Command: Basic/unix-command.md
+      - Visual Studio Code: Basic/vscode.md
       - Terminal:
-          - bat: Common/Terminal/bat.md
-          - exa: Common/Terminal/exa.md
-          - fish: Common/Terminal/fish.md
-          - Starship: Common/Terminal/starship.md
+          - bat: Basic/Terminal/bat.md
+          - exa: Basic/Terminal/exa.md
+          - fish: Basic/Terminal/fish.md
+          - Starship: Basic/Terminal/starship.md
+      - Git:
+          - Git: Basic/Git/index.md
+          - Commit Guidline: Basic/Git/commit-guidline.md
+          - GitHub Actions: Basic/Git/github-actions.md
+          - GitHub: Basic/Git/github.md
+  - Frontend:
+      - Frontend: Frontend/index.md
+      - Atomic Design: Frontend/atomic-design.md
+      - Test:
+          - テスト: Frontend/Test/index.md
+          - Cypress: Frontend/Test/cypress.md
+          - Jest Styled Components: Frontend/Test/jest-styled-components.md
+          - Jest: Frontend/Test/jest.md
+          - Mock Service Worker: Frontend/Test/msw.md
+          - ts-jest: Frontend/Test/ts-jest.md
+          - testing-library:
+              - Testing Library: Frontend/Test/testing-library/index.md
+              - jest-dom: Frontend/Test/testing-library/jest-dom.md
+              - React Testing Library: Frontend/Test/testing-library/react.md
+              - user-event: Frontend/Test/testing-library/user-event.md
+      - Util:
+          - Chromatic: Frontend/Util/chromatic.md
+          - Husky: Frontend/Util/husky.md
+          - lint-staged: Frontend/Util/lint-staged.md
+          - semantic-release: Frontend/Util/semantic-release.md
+          - Storybook Deployer: Frontend/Util/storybook-deployer.md
+          - Storybook: Frontend/Util/storybook.md
+      - CSS:
+          - CSS: Frontend/CSS/index.md
+          - CSS Flexbox: Frontend/CSS/flex-box.md
+          - Learning Resources: Frontend/CSS/learning-resources.md
+          - CSS Property Order: Frontend/CSS/property-order.md
+          - stylelint: Frontend/CSS/stylelint.md
+      - Vue:
+          - Nuxt.js: Frontend/Vue/nuxt.md
+          - Vue.js: Frontend/Vue/vue.md
+          - Vuex: Frontend/Vue/vuex.md
+      - HTML:
+          - HTML: Frontend/HTML/index.md
+          - Learning Resources: Frontend/HTML/learning-resources.md
+          - Semantic HTML: Frontend/HTML/semantic-html.md
+      - JavaScript:
+          - JavaScript: Frontend/JavaScript/index.md
+          - Babel: Frontend/JavaScript/babel.md
+          - ESLint: Frontend/JavaScript/eslint.md
+          - Node.js: Frontend/JavaScript/nodejs.md
+          - npm: Frontend/JavaScript/npm.md
+          - Prettier: Frontend/JavaScript/prettier.md
+          - Yarn: Frontend/JavaScript/yarn.md
+          - TypeScript:
+              - TypeScript: Frontend/JavaScript/TypeScript/index.md
+              - ts-node: Frontend/JavaScript/TypeScript/ts-node.md
+          - Webpack:
+              - Webpack Dev Server: Frontend/JavaScript/Webpack/WebpackDevServer.md
+              - webpack: Frontend/JavaScript/Webpack/webpack.md
+      - Electron:
+          - Electron: Frontend/Electron/index.md
+          - electron-builder: Frontend/Electron/electron-builder.md
+          - electron-webpack: Frontend/Electron/electron-webpack.md
+      - React:
+          - React: Frontend/React/index.md
+          - React Context: Frontend/React/react-context.md
+          - React Hooks: Frontend/React/react-hooks.md
+          - React Hot Loader: Frontend/React/react-hot-loader.md
+          - React Redux: Frontend/React/react-redux.md
+          - React Router: Frontend/React/react-router.md
+          - Redux Toolkit: Frontend/React/redux-toolkit.md
+          - Redux: Frontend/React/redux.md
+          - Styled Components: Frontend/React/styled-components.md
+          - Styled System: Frontend/React/styled-system.md
+      - ReactNative:
+          - React Native: Frontend/ReactNative/index.md
+          - Expo: Frontend/ReactNative/expo.md
+  - Backend:
+      - Backend: Backend/index.md
+      - Restful API: Backend/restful-api.md
+      - Nodejs:
+          - Node.js: Backend/Nodejs/index.md
+          - Configuration:
+              - dotenv: Backend/Nodejs/Configuration/dotenv.md
+          - Standard Library:
+              - fs: Backend/Nodejs/Standard Library/fs.md
+              - path: Backend/Nodejs/Standard Library/path.md
+          - TypeScript:
+              - TypeScript: Backend/Nodejs/TypeScript/index.md
+              - Babel: Backend/Nodejs/TypeScript/babel.md
+              - ts-node-dev: Backend/Nodejs/TypeScript/ts-node-dev.md
+              - ts-node: Backend/Nodejs/TypeScript/ts-node.md
+          - Linting&Formatting:
+              - ESLint: Backend/Nodejs/Linting&Formatting/eslint.md
+              - Husky: Backend/Nodejs/Linting&Formatting/husky.md
+              - lint-staged: Backend/Nodejs/Linting&Formatting/lint-staged.md
+              - Prettier: Backend/Nodejs/Linting&Formatting/prettier.md
+              - textlint: Backend/Nodejs/Linting&Formatting/textlint.md
+          - DB:
+              - better-sqlite3: Backend/Nodejs/DB/better-sqlite3.md
+              - db-migrate: Backend/Nodejs/DB/db-migrate.md
+              - mysql2: Backend/Nodejs/DB/mysql2.md
+              - Prisma: Backend/Nodejs/DB/prisma.md
+              - Sequelize: Backend/Nodejs/DB/sequelize.md
+              - TypeORM: Backend/Nodejs/DB/typeorm.md
+          - Error:
+              - http-errors: Backend/Nodejs/Error/http-errors.md
+          - Validation:
+              - express-validator: Backend/Nodejs/Validation/express-validator.md
+              - validator: Backend/Nodejs/Validation/validator.md
+      - Go:
+          - Go: Backend/Go/index.md
+          - Afero: Backend/Go/afero.md
+          - Cobra: Backend/Go/cobra.md
+          - Echo: Backend/Go/echo.md
+          - Go encoding/csv: Backend/Go/encoding-csv.md
+          - GoReleaser: Backend/Go/go-releaser.md
+          - GORM: Backend/Go/gorm.md
+          - jwt-go: Backend/Go/jwt-go.md
+          - Go Project Layout: Backend/Go/project-layout.md
+          - Viper: Backend/Go/viper.md
+          - zerolog: Backend/Go/zerolog.md
+          - standard:
+              - Go bufio: Backend/Go/standard/bufio.md
+              - Go io/ioutil: Backend/Go/standard/io-ioutil.md
+              - Go os/exec: Backend/Go/standard/os-exec.md
+              - Go os: Backend/Go/standard/os.md
+      - Python:
+          - Flask: Backend/Python/flask.md
+      - DB:
+          - DB Design: Backend/DB/DBDesign.md
+          - MySQL: Backend/DB/mysql.md
   - DevOps:
       - DevOps: DevOps/index.md
       - Make: DevOps/make.md
       - Nginx: DevOps/nginx.md
-      - docker:
-          - Docker: DevOps/docker/index.md
-          - Compose: DevOps/docker/compose.md
-          - Dockerfile: DevOps/docker/file.md
-          - hadolint: DevOps/docker/hadolint.md
-          - Kubernetes: DevOps/docker/kubernetes.md
-  - Front-end:
-      - Atomic Design: Front-end/atomic-design.md
-      - CSS:
-          - CSS: Front-end/CSS/index.md
-          - CSS Flexbox: Front-end/CSS/flex-box.md
-          - Learning Resources: Front-end/CSS/learning-resources.md
-          - CSS Property Order: Front-end/CSS/property-order.md
-          - stylelint: Front-end/CSS/stylelint.md
-      - Electron:
-          - Electron: Front-end/Electron/index.md
-          - electron-builder: Front-end/Electron/electron-builder.md
-          - electron-webpack: Front-end/Electron/electron-webpack.md
-      - HTML:
-          - HTML: Front-end/HTML/index.md
-          - Learning Resources: Front-end/HTML/learning-resources.md
-          - Semantic HTML: Front-end/HTML/semantic-html.md
-      - JavaScript:
-          - JavaScript: Front-end/JavaScript/index.md
-          - Babel: Front-end/JavaScript/babel.md
-          - ESLint: Front-end/JavaScript/eslint.md
-          - Node.js: Front-end/JavaScript/nodejs.md
-          - npm: Front-end/JavaScript/npm.md
-          - Prettier: Front-end/JavaScript/prettier.md
-          - Yarn: Front-end/JavaScript/yarn.md
-          - TypeScript:
-              - TypeScript: Front-end/JavaScript/TypeScript/index.md
-              - ts-node: Front-end/JavaScript/TypeScript/ts-node.md
-          - Webpack:
-              - Webpack Dev Server: Front-end/JavaScript/Webpack/WebpackDevServer.md
-              - webpack: Front-end/JavaScript/Webpack/webpack.md
-      - React:
-          - React: Front-end/React/index.md
-          - React Context: Front-end/React/react-context.md
-          - React Hooks: Front-end/React/react-hooks.md
-          - React Hot Loader: Front-end/React/react-hot-loader.md
-          - React Redux: Front-end/React/react-redux.md
-          - React Router: Front-end/React/react-router.md
-          - Redux Toolkit: Front-end/React/redux-toolkit.md
-          - Redux: Front-end/React/redux.md
-          - Styled Components: Front-end/React/styled-components.md
-          - Styled System: Front-end/React/styled-system.md
-      - Test:
-          - テスト: Front-end/Test/index.md
-          - Cypress: Front-end/Test/cypress.md
-          - Jest Styled Components: Front-end/Test/jest-styled-components.md
-          - Jest: Front-end/Test/jest.md
-          - Mock Service Worker: Front-end/Test/msw.md
-          - ts-jest: Front-end/Test/ts-jest.md
-          - testing-library:
-              - Testing Library: Front-end/Test/testing-library/index.md
-              - jest-dom: Front-end/Test/testing-library/jest-dom.md
-              - React Testing Library: Front-end/Test/testing-library/react.md
-              - user-event: Front-end/Test/testing-library/user-event.md
-      - Util:
-          - Chromatic: Front-end/Util/chromatic.md
-          - Husky: Front-end/Util/husky.md
-          - lint-staged: Front-end/Util/lint-staged.md
-          - semantic-release: Front-end/Util/semantic-release.md
-          - Storybook Deployer: Front-end/Util/storybook-deployer.md
-          - Storybook: Front-end/Util/storybook.md
-      - Vue:
-          - Nuxt.js: Front-end/Vue/nuxt.md
-          - Vue.js: Front-end/Vue/vue.md
-          - Vuex: Front-end/Vue/vuex.md
-  - Machine Learning:
-      - Machine Learning: Machine Learning/index.md
-      - CNN: Machine Learning/cnn.md
-      - RNN: Machine Learning/rnn.md
-      - Python:
-          - Python: Machine Learning/Python/index.md
-          - Beautiful Soup: Machine Learning/Python/beautiful-soup.md
-          - black: Machine Learning/Python/black.md
-          - flake8: Machine Learning/Python/flake8.md
-          - Loguru: Machine Learning/Python/loguru.md
-          - Matplotlib: Machine Learning/Python/matplotlib.md
-          - Mypy: Machine Learning/Python/mypy.md
-          - NumPy: Machine Learning/Python/numpy.md
-          - poetry: Machine Learning/Python/poetry.md
-          - pyenv: Machine Learning/Python/pyenv.md
-          - python-dotenv: Machine Learning/Python/python-dotenv.md
-          - PyTorch: Machine Learning/Python/pytorch.md
-          - Scrapy: Machine Learning/Python/scrapy.md
-          - tqdm: Machine Learning/Python/tqdm.md
-          - Standard Library:
-              - pathlib: Machine Learning/Python/Standard Library/pathlib.md
+      - Docker:
+          - Docker: DevOps/Docker/index.md
+          - Compose: DevOps/Docker/compose.md
+          - Dockerfile: DevOps/Docker/file.md
+          - hadolint: DevOps/Docker/hadolint.md
+          - Kubernetes: DevOps/Docker/kubernetes.md
+      - AWS:
+          - AWS: DevOps/AWS/index.md
+          - Analytics: DevOps/AWS/analytics.md
+          - Compute: DevOps/AWS/compute.md
+          - Container: DevOps/AWS/container.md
+          - Cost Management: DevOps/AWS/cost-management.md
+          - Database: DevOps/AWS/database.md
+          - Application Integration: DevOps/AWS/integration.md
+          - Management & Governance: DevOps/AWS/management.md
+          - Migration: DevOps/AWS/migration.md
+          - Network: DevOps/AWS/network.md
+          - Secutity: DevOps/AWS/security.md
+          - Storage: DevOps/AWS/storage.md
+          - Design Pattern:
+              - Design Pattern: DevOps/AWS/Design Pattern/index.md
   - Software Design:
       - Software Design: Software Design/index.md
       - Class Diagram: Software Design/class-diagram.md
@@ -241,3 +208,54 @@ nav:
       - Object-Oriented Programming: Software Design/oop.md
       - Programming Paradigms: Software Design/paradigms.md
       - SOLID: Software Design/solid.md
+  - Data Science:
+      - Machine Learning: Data Science/index.md
+      - Hugging Face Transformers:
+          - Hugging Face Transformers: Data Science/Hugging Face Transformers/index.md
+      - Python:
+          - Python: Data Science/Python/index.md
+          - Beautiful Soup: Data Science/Python/beautiful-soup.md
+          - FastAPI: Data Science/Python/fast-api.md
+          - Loguru: Data Science/Python/loguru.md
+          - Matplotlib: Data Science/Python/matplotlib.md
+          - Mypy: Data Science/Python/mypy.md
+          - NumPy: Data Science/Python/numpy.md
+          - Poetry: Data Science/Python/poetry.md
+          - pyenv: Data Science/Python/pyenv.md
+          - python-dotenv: Data Science/Python/python-dotenv.md
+          - Requests: Data Science/Python/requests.md
+          - Scrapy: Data Science/Python/scrapy.md
+          - tqdm: Data Science/Python/tqdm.md
+          - Uvicorn: Data Science/Python/uvicorn.md
+          - Lingting&Formatting:
+              - black: Data Science/Python/Lingting&Formatting/black.md
+              - flake8: Data Science/Python/Lingting&Formatting/flake8.md
+          - Standard Library:
+              - pathlib: Data Science/Python/Standard Library/pathlib.md
+      - PyTorch:
+          - PyTorch: Data Science/PyTorch/index.md
+          - PyTorch Lightning: Data Science/PyTorch/PyTorch Lightning.md
+          - torchvision:
+              - torchvision: Data Science/PyTorch/torchvision/index.md
+          - torchtext:
+              - Torchtext: Data Science/PyTorch/torchtext/index.md
+              - Datasets: Data Science/PyTorch/torchtext/datasets.md
+  - Blockchain:
+      - Blockchain: Blockchain/index.md
+      - IWA: Blockchain/IWA.md
+      - Oracle: Blockchain/Oracle.md
+      - TTF: Blockchain/TTF.md
+      - Truffle: Blockchain/Truffle.md
+      - web3.js: Blockchain/web3js.md
+      - Solidity:
+          - Solidity: Blockchain/Solidity/index.md
+          - Solidity Common Patterns: Blockchain/Solidity/CommonPatterns.md
+          - Solidity Security: Blockchain/Solidity/Security.md
+          - Solidity Usage: Blockchain/Solidity/Usage.md
+          - stringutils: Blockchain/Solidity/stringutils.md
+      - OpenZeppelin:
+          - OpenZeppelin: Blockchain/OpenZeppelin/index.md
+          - ERC 20: Blockchain/OpenZeppelin/ERC20.md
+          - ERC 721: Blockchain/OpenZeppelin/ERC721.md
+          - ERC 777: Blockchain/OpenZeppelin/ERC777.md
+          - Ownable: Blockchain/OpenZeppelin/Ownership.md
