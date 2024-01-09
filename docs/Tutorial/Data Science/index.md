@@ -71,6 +71,8 @@ code ./threestudio
 
 ![devcontainer](./images/devcontainer.png)
 
+各ファイルの中に以下をコピーします。
+
 ```json title="devcontainer.json"
 {
     "name": "Python 3.10",
@@ -103,8 +105,6 @@ code ./threestudio
     "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
 }
 ```
-
-各ファイルの中に以下をコピーします。
 
 ```Dockerfile title="Dockerfile"
 FROM nvidia/cuda:12.1.0-cudnn8-devel-ubuntu22.04
