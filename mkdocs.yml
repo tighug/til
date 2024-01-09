@@ -6,8 +6,8 @@ theme:
   name: material
   palette:
     scheme: slate
-    primary: indigo
-    accent: green
+    primary: teal
+    accent: teal
   features:
     - navigation.tabs
     - navigation.instant
@@ -35,7 +35,7 @@ markdown_extensions:
 nav:
   - README: index.md
   - Basic:
-      - Common: Basic/index.md
+      - Basic: Basic/index.md
       - Linux Directory: Basic/linux-directory.md
       - Unix Command: Basic/unix-command.md
       - Visual Studio Code: Basic/vscode.md
@@ -209,7 +209,7 @@ nav:
       - Programming Paradigms: Software Design/paradigms.md
       - SOLID: Software Design/solid.md
   - Data Science:
-      - Machine Learning: Data Science/index.md
+      - Data Science: Data Science/index.md
       - Hugging Face Transformers:
           - Hugging Face Transformers: Data Science/Hugging Face Transformers/index.md
       - Python:
@@ -259,3 +259,7 @@ nav:
           - ERC 721: Blockchain/OpenZeppelin/ERC721.md
           - ERC 777: Blockchain/OpenZeppelin/ERC777.md
           - Ownable: Blockchain/OpenZeppelin/Ownership.md
+  - Tutorial:
+      - Tutorial: Tutorial/index.md
+      - Data Science:
+          - WSL2 上の Docker に Cuda + PyTorch 開発環境を構築する: Tutorial/Data Science/index.md
