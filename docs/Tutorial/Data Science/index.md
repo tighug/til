@@ -75,7 +75,7 @@ code ./threestudio
 
 ```json title="devcontainer.json"
 {
-    "name": "Python 3.10",
+    "name": "Python Cuda Devenv",
     "build": {
         "dockerfile": "Dockerfile",
         "context": "."
@@ -90,24 +90,23 @@ code ./threestudio
                 "ms-python.vscode-pylance",
                 "ms-python.python",
                 "bungcip.better-toml"
-            ]
-        }
-    },
-    "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh",
-        "terminal.integrated.profiles.linux": {
-            "zsh": {
-                "path": "/bin/zsh"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/bin/zsh"
+                    }
+                }
             }
         }
     },
-    "runArgs": ["--gpus", "all", "--shm-size", "16gb"],
-    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+    "runArgs": ["--gpus", "all", "--shm-size", "16gb"]
 }
 ```
 
 ```Dockerfile title="Dockerfile"
-FROM nvidia/cuda:12.1.0-cudnn8-devel-ubuntu22.04
+FROM nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04
 
 ENV TZ=Asia/Tokyo
 ENV DEBIAN_FRONTEND=noninteractive
@@ -117,12 +116,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     exa \
     git \
+    google-perftools \
     python3-pip \
     python3-dev \
+    python3-venv \
     libopencv-dev \
     make \
     tzdata \
     vim \
+    wget \
     zsh
 RUN sh -c "$(curl -fsSL https://starship.rs/install.sh)" -y -f
 RUN apt-get autoremove -y
@@ -131,8 +133,7 @@ ENV POETRY_HOME=/opt/poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
 RUN cd /usr/local/bin && \
     ln -s /opt/poetry/bin/poetry
-RUN pip install ninja
-RUN pip install torch torchvision torchaudio
+RUN echo "alias python=python3" >> ~/.zshrc
 ```
 
 上記でコンテナの起動構成を記述したので、次に実際にコンテナを起動してアクセスします。VS Code 左下の「><」のようなボタンをクリックし、表示されたメニューから「コンテナーで再度開く」を選択します。
