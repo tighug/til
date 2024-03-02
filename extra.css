@@ -1,0 +1,64 @@
+.md-typeset h1 {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.md-typeset h2 {
+  font-weight: bold;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  margin-top: 2.2em;
+  padding-bottom: 0.1rem;
+}
+
+.md-typeset h3 {
+  font-weight: bold;
+  margin-top: 2.2em;
+  padding-bottom: 0.1rem;
+}
+
+.md-typeset h4 {
+  font-weight: bold;
+  margin-top: 1.1em;
+}
+
+.tabbed-sed {
+  margin: 0;
+}
+
+strong {
+  color: var(--md-accent-fg-color) !important;
+}
+
+table {
+  font-size: 0.7rem !important;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 3px 1px -2px rgba(0, 0, 0, 0.12), 0px 1px 5px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+p code {
+  font-size: 0.95em !important;
+  padding-top: 0.1em !important;
+  padding-bottom: 0.1em !important;
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important;
+  color: var(--md-accent-fg-color) !important;
+}
+
+code {
+  font-size: 1em !important;
+}
+
+pre code {
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 3px 1px -2px rgba(0, 0, 0, 0.12), 0px 1px 5px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+table thead {
+  font-weight: bold !important;
+}
+
+table th {
+  background-color: var(--md-primary-fg-color) !important;
+  color: var(--md-primary-bg-color) !important;
+}
