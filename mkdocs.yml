@@ -4,6 +4,14 @@ docs_dir: wiki
 
 theme:
   name: material
+  language: ja
+  palette:
+    scheme: slate
+    primary: teal
+    accent: teal
+  features:
+    - navigation.tabs
+    - navigation.instant
 
 plugins:
   - search
@@ -20,3 +28,24 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tasklist
+
+nav:
+  - Home: index.md
+  - Log: log.md
+  - Concepts:
+      - agents-md-design: concepts/agents-md-design.md
+      - claude-code-hooks: concepts/claude-code-hooks.md
+      - claude-code-skills: concepts/claude-code-skills.md
+      - coding-agent-autonomy: concepts/coding-agent-autonomy.md
+      - deterministic-quality-tools: concepts/deterministic-quality-tools.md
+      - e2e-testing-for-agents: concepts/e2e-testing-for-agents.md
+      - harness-engineering: concepts/harness-engineering.md
+      - mcp: concepts/mcp.md
+      - ralph-loop: concepts/ralph-loop.md
+      - simplicity-over-complexity: concepts/simplicity-over-complexity.md
+  - Sources:
+      - agent-workflow-skill-design: sources/agent-workflow-skill-design.md
+      - claude-code-intermediate-guide: sources/claude-code-intermediate-guide.md
+      - claude-code-obsidian-infra: sources/claude-code-obsidian-infra.md
+      - harness-engineering-best-practices: sources/harness-engineering-best-practices.md
+      - nobody-gets-promoted-for-simplicity: sources/nobody-gets-promoted-for-simplicity.md
