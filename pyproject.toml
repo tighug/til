@@ -1,0 +1,20 @@
+[project]
+name = "til"
+version = "0.1.0"
+description = "LLM-powered TIL personal wiki with Obsidian + MkDocs"
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocs-obsidian-links",
+    "mkdocs-callouts",
+    "pyyaml",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

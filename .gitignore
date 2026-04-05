@@ -1,0 +1,10 @@
+# MkDocs build output
+site/
+
+# Obsidian
+.obsidian/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
