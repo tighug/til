@@ -19,6 +19,6 @@ tags: []
 - raw/articles/Codex ユーザーのための誰でもわかるHarness Engineeringベストプラクティス.md
 - raw/articles/Nobody Gets Promoted for Simplicity.md
 
-sources: 5件作成、concepts: 9件作成（harness-engineering, claude-code-skills, claude-code-hooks, ralph-loop, coding-agent-autonomy, mcp, simplicity-over-complexity, agents-md-design, deterministic-quality-tools, e2e-testing-for-agents）
+sources: 5件作成、concepts: 10件作成（harness-engineering, claude-code-skills, claude-code-hooks, ralph-loop, coding-agent-autonomy, mcp, simplicity-over-complexity, agents-md-design, deterministic-quality-tools, e2e-testing-for-agents）
 
 ## 2026-04-05 init | Wiki初期構造を作成
