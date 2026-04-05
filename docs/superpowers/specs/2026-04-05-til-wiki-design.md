@@ -21,6 +21,7 @@ til/
 ├── uv.lock                    # ロックファイル（自動生成）
 ├── mkdocs_hooks/
 │   └── public_filter.py       # public: trueフィルタリングフック
+├── .gitignore                 # site/, .obsidian/ を除外
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml         # GitHub Pages自動デプロイ
@@ -71,24 +72,31 @@ tags:
 - `tags` はObsidianのタグ検索とMkDocs Material のタグ機能の両方で活用
 - 本文中のリンクは全て `[[wikilink]]` 記法で統一
 - ファイル名はケバブケース（例: `list-comprehension.md`）
-- `log.md` の形式: `## [YYYY-MM-DD] operation-type | 説明`
+- `log.md` の形式: `## YYYY-MM-DD operation-type | 説明`
+- `index.md` と `log.md` は構造ファイルとして `public: true` を設定すること
 
 ## Obsidian + MkDocs 互換性
 
 ### MkDocsプラグイン構成
 
 ```yaml
+theme:
+  name: material
+
 plugins:
   - search
-  - obsidian-links             # [[wikilinks]] → 標準リンクに変換
+  - ezlinks                    # [[wikilinks]] → 標準リンクに変換（mkdocs-obsidian-links）
+  - callouts                   # Obsidianコールアウト `> [!note]` → admonition変換
   - tags                       # frontmatterのtagsを活用
-  - mkdocs-exclude:
-      glob:
-        - "*.exclude"
+
+hooks:
+  - mkdocs_hooks/public_filter.py
 
 markdown_extensions:
-  - meta                       # frontmatter読み取り
-  - admonition                 # コールアウト対応
+  - nl2br                      # 改行をbrに変換（callouts用）
+  - admonition                 # コールアウト表示
+  - pymdownx.details           # 折りたたみコールアウト対応
+  - pymdownx.superfences       # コールアウト内コードブロック対応
   - pymdownx.tasklist          # チェックリスト対応
 ```
 
@@ -102,18 +110,20 @@ import yaml
 
 def on_files(files, config):
     """public: true でないページをビルドから除外"""
-    filtered = []
+    to_remove = []
     for file in files:
         if not file.src_path.endswith('.md'):
-            filtered.append(file)
             continue
         with open(file.abs_src_path, 'r') as f:
             content = f.read()
         if content.startswith('---'):
             fm = yaml.safe_load(content.split('---')[1])
-            if fm and fm.get('public') is True:
-                filtered.append(file)
-    files._files = filtered
+            if not (fm and fm.get('public') is True):
+                to_remove.append(file)
+        else:
+            to_remove.append(file)  # frontmatterなし = 非公開
+    for file in to_remove:
+        files.remove(file)
     return files
 ```
 
@@ -126,7 +136,7 @@ def on_files(files, config):
 | `[[wikilinks]]` | ネイティブ | プラグインで変換 |
 | frontmatter tags | タグペイン | Material tags機能 |
 | 画像 `![[image.png]]` | ネイティブ | プラグインで変換 |
-| コールアウト `> [!note]` | ネイティブ | admonition拡張で近似 |
+| コールアウト `> [!note]` | ネイティブ | calloutsプラグインで変換 |
 | バックリンク | ネイティブ | 非対応（許容） |
 
 ## CLAUDE.md（LLMエージェント向けスキーマ）
@@ -165,7 +175,7 @@ name: Deploy Wiki to GitHub Pages
 on:
   push:
     branches: [main]
-    paths: [wiki/**, mkdocs.yml]
+    paths: [wiki/**, mkdocs.yml, mkdocs_hooks/**, pyproject.toml]
 
 permissions:
   pages: write
@@ -179,10 +189,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      - uses: astral-sh/setup-uv@v5
       - run: uv sync
       - run: uv run mkdocs build --strict
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: site/
       - id: deployment
@@ -191,9 +201,25 @@ jobs:
 
 ### 設計判断
 
-- `wiki/` か `mkdocs.yml` に変更があったときだけトリガー（`raw/` の変更ではビルドしない）
+- `wiki/`、`mkdocs.yml`、`mkdocs_hooks/`、`pyproject.toml` に変更があったときトリガー（`raw/` の変更ではビルドしない）
 - `--strict` で壊れたリンク等があればビルドを失敗させる
 - `uv sync` + `uv run` で依存管理
+
+### 非公開ページへのリンクの扱い
+
+公開ページから非公開ページへの `[[wikilink]]` がある場合、`--strict` ビルドが壊れたリンクとして検出する。
+対策として、公開ページは他の公開ページにのみリンクすることをCLAUDE.mdの規約とする。
+LLMがIngest時にこの規約を遵守し、`public: true` のページ内のリンク先が全て公開ページであることを確認する。
+
+## 依存パッケージ
+
+`pyproject.toml` で以下を管理する：
+
+- `mkdocs`
+- `mkdocs-material`
+- `mkdocs-obsidian-links` （プラグイン名: `ezlinks`）
+- `mkdocs-callouts` （プラグイン名: `callouts`）
+- `pyyaml` （フックで使用）
 
 ## 参考
 
