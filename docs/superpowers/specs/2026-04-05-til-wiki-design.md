@@ -58,7 +58,7 @@ related:                   # 関連Wikiページへのwikilink
   - "[[python-performance]]"
 created: 2026-04-05
 updated: 2026-04-05
-public: false              # trueのページのみMkDocsで公開
+public: true               # デフォルト公開。非公開にしたい場合のみfalseに設定
 tags:
   - python
   - syntax
@@ -67,7 +67,7 @@ tags:
 
 ### 規約
 
-- `public` のデフォルトは `false`（明示的に `true` にしたページのみ公開）
+- `public` のデフォルトは `true`（非公開にしたい場合のみ `false` に設定）
 - `type` は2種: `concept`（学んだ知識）と `source-summary`（取り込み元の要約）
 - `tags` はObsidianのタグ検索とMkDocs Material のタグ機能の両方で活用
 - 本文中のリンクは全て `[[wikilink]]` 記法で統一
