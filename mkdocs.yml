@@ -1,0 +1,22 @@
+site_name: TIL Wiki
+site_description: LLM-powered personal knowledge base
+docs_dir: wiki
+
+theme:
+  name: material
+
+plugins:
+  - search
+  - ezlinks
+  - callouts
+  - tags
+
+hooks:
+  - mkdocs_hooks/public_filter.py
+
+markdown_extensions:
+  - nl2br
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist
