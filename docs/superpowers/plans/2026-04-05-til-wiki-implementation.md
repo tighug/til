@@ -1,8 +1,8 @@
-# TIL Personal Wiki Implementation Plan
+# Today I Learned Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Karpathyスタイルの LLM 駆動 TIL Wiki を構築し、Obsidian と MkDocs (Material) の両方から参照可能にする
+**Goal:** Karpathyスタイルの LLM 駆動 Today I Learned Wiki を構築し、Obsidian と MkDocs (Material) の両方から参照可能にする
 
 **Architecture:** `wiki/` ディレクトリを Obsidian Vault 兼 MkDocs ドキュメントルートとして共有。`[[wikilinks]]` は Obsidian でネイティブ動作し、MkDocs では ezlinks プラグインでビルド時変換。`public: true` frontmatter による選択的公開を MkDocs フックで実現。
 
@@ -62,7 +62,7 @@ __pycache__/
 [project]
 name = "til"
 version = "0.1.0"
-description = "LLM-powered TIL personal wiki with Obsidian + MkDocs"
+description = "LLM-powered Today I Learned wiki with Obsidian + MkDocs"
 requires-python = ">=3.12"
 dependencies = [
     "mkdocs",
@@ -103,7 +103,7 @@ git commit -m "feat: add project scaffolding with uv and MkDocs dependencies"
 - [ ] **Step 1: `mkdocs.yml` を作成**
 
 ```yaml
-site_name: TIL Wiki
+site_name: Today I Learned
 site_description: LLM-powered personal knowledge base
 docs_dir: wiki
 
@@ -336,7 +336,7 @@ public: true
 tags: []
 ---
 
-# TIL Wiki
+# Today I Learned
 
 ## Categories
 
@@ -379,7 +379,7 @@ git commit -m "feat: add initial wiki structure with index and log"
 - [ ] **Step 1: `CLAUDE.md` を作成**
 
 ```markdown
-# TIL Personal Wiki
+# Today I Learned
 
 ## スキーマ
 
@@ -508,7 +508,7 @@ git commit -m "feat: add GitHub Actions workflow for Pages deployment"
 - [ ] **Step 1: `README.md` を更新**
 
 ```markdown
-# TIL Wiki
+# Today I Learned
 
 LLM駆動の個人ナレッジベース。Obsidianでローカル閲覧・編集し、MkDocsで選択的に公開。
 

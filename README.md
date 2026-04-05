@@ -1,4 +1,4 @@
-# TIL Wiki
+# Today I Learned
 
 LLM駆動の個人ナレッジベース。Obsidianでローカル閲覧・編集し、MkDocsで選択的に公開。
 

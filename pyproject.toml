@@ -1,7 +1,7 @@
 [project]
 name = "til"
 version = "0.1.0"
-description = "LLM-powered TIL personal wiki with Obsidian + MkDocs"
+description = "LLM-powered Today I Learned wiki with Obsidian + MkDocs"
 requires-python = ">=3.12"
 dependencies = [
     "mkdocs",

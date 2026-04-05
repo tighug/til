@@ -1,8 +1,8 @@
-# TIL Personal Wiki 設計書
+# Today I Learned 設計書
 
 ## 概要
 
-LLMを使って個人ナレッジベース（TIL Wiki）を構築・運用するシステム。
+LLMを使って個人ナレッジベース（Today I Learned）を構築・運用するシステム。
 Karpathyの「LLM Knowledge Bases」パターンを踏襲しつつ、ObsidianとMkDocsの両方から参照可能にする。
 
 **コアコンセプト:**
