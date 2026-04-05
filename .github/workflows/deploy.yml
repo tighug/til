@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths: [wiki/**, mkdocs.yml, mkdocs_hooks/**, pyproject.toml]
+  workflow_dispatch:
 
 permissions:
   pages: write
