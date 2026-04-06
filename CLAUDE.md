@@ -40,4 +40,4 @@ tags:
 
 ### 操作
 
-スキルとして定義済み。`/ingest`、`/query`、`/lint` で呼び出す。
+スキルとして定義済み。`/ingest`、`/query`、`/lint`、`/research` で呼び出す。
