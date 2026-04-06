@@ -51,10 +51,15 @@ def _extract_wikilinks(filepath):
 def _resolve_wikilink(name):
     """wikilink名をファイルパスに解決。見つからなければ None。"""
     name = name.split("|")[0]
-    for subdir in ["concepts", "sources", ""]:
-        candidate = os.path.join(WIKI_DIR, subdir, f"{name}.md")
-        if os.path.isfile(candidate):
-            return candidate
+    for subdir in ["concepts", "sources"]:
+        pattern = os.path.join(WIKI_DIR, subdir, "**", f"{name}.md")
+        matches = glob.glob(pattern, recursive=True)
+        if matches:
+            return matches[0]
+    # wiki/ 直下も検索（index.md, log.md等）
+    candidate = os.path.join(WIKI_DIR, f"{name}.md")
+    if os.path.isfile(candidate):
+        return candidate
     return None
 
 
@@ -102,7 +107,7 @@ class TestIndexSync:
         index_links = set(re.findall(r"\[\[([^\]]+)\]\]", index_content))
 
         concept_dir = os.path.join(WIKI_DIR, "concepts")
-        concept_files = glob.glob(os.path.join(concept_dir, "*.md"))
+        concept_files = glob.glob(os.path.join(concept_dir, "**", "*.md"), recursive=True)
 
         orphans = []
         for filepath in concept_files:
