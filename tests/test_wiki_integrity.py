@@ -50,6 +50,7 @@ def _extract_wikilinks(filepath):
 
 def _resolve_wikilink(name):
     """wikilink名をファイルパスに解決。見つからなければ None。"""
+    name = name.split("|")[0]
     for subdir in ["concepts", "sources", ""]:
         candidate = os.path.join(WIKI_DIR, subdir, f"{name}.md")
         if os.path.isfile(candidate):
